@@ -1,0 +1,343 @@
+{
+  "timestamp": "2026-06-09T18:47:58.332170",
+  "data_audit": {
+    "total_records": 89974,
+    "total_columns": 22,
+    "date_range": {
+      "min": "2021-01-01 00:12:50",
+      "max": "2023-12-31 22:37:32"
+    },
+    "columns_info": {
+      "transaction_id": {
+        "dtype": "int64",
+        "missing_count": 0,
+        "missing_pct": 0.0,
+        "unique_values": 89974,
+        "sample_values": [
+          1,
+          2,
+          3
+        ]
+      },
+      "timestamp": {
+        "dtype": "str",
+        "missing_count": 0,
+        "missing_pct": 0.0,
+        "unique_values": 89938,
+        "sample_values": [
+          "2021-12-27 08:25:15",
+          "2023-06-06 21:14:26",
+          "2023-08-31 05:29:54"
+        ]
+      },
+      "customer_id": {
+        "dtype": "int64",
+        "missing_count": 0,
+        "missing_pct": 0.0,
+        "unique_values": 58987,
+        "sample_values": [
+          59540,
+          54871,
+          51818
+        ]
+      },
+      "product_id": {
+        "dtype": "int64",
+        "missing_count": 0,
+        "missing_pct": 0.0,
+        "unique_values": 2000,
+        "sample_values": [
+          1630,
+          1901,
+          1884
+        ]
+      },
+      "quantity": {
+        "dtype": "int64",
+        "missing_count": 0,
+        "missing_pct": 0.0,
+        "unique_values": 4,
+        "sample_values": [
+          3,
+          3,
+          1
+        ]
+      },
+      "discount_applied": {
+        "dtype": "float64",
+        "missing_count": 0,
+        "missing_pct": 0.0,
+        "unique_values": 5,
+        "sample_values": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "gross_revenue": {
+        "dtype": "float64",
+        "missing_count": 0,
+        "missing_pct": 0.0,
+        "unique_values": 14474,
+        "sample_values": [
+          43.74,
+          174.78,
+          40.61
+        ]
+      },
+      "campaign_id": {
+        "dtype": "int64",
+        "missing_count": 0,
+        "missing_pct": 0.0,
+        "unique_values": 51,
+        "sample_values": [
+          0,
+          21,
+          37
+        ]
+      },
+      "refund_flag": {
+        "dtype": "int64",
+        "missing_count": 0,
+        "missing_pct": 0.0,
+        "unique_values": 1,
+        "sample_values": [
+          0,
+          0,
+          0
+        ]
+      },
+      "category": {
+        "dtype": "str",
+        "missing_count": 0,
+        "missing_pct": 0.0,
+        "unique_values": 6,
+        "sample_values": [
+          "Grocery",
+          "Home",
+          "Fashion"
+        ]
+      },
+      "brand": {
+        "dtype": "str",
+        "missing_count": 0,
+        "missing_pct": 0.0,
+        "unique_values": 100,
+        "sample_values": [
+          "Brand_76",
+          "Brand_20",
+          "Brand_23"
+        ]
+      },
+      "base_price": {
+        "dtype": "float64",
+        "missing_count": 0,
+        "missing_pct": 0.0,
+        "unique_values": 1869,
+        "sample_values": [
+          14.58,
+          58.26,
+          40.61
+        ]
+      },
+      "launch_date": {
+        "dtype": "str",
+        "missing_count": 0,
+        "missing_pct": 0.0,
+        "unique_values": 901,
+        "sample_values": [
+          "2022-11-02",
+          "2022-09-21",
+          "2021-04-24"
+        ]
+      },
+      "is_premium": {
+        "dtype": "int64",
+        "missing_count": 0,
+        "missing_pct": 0.0,
+        "unique_values": 2,
+        "sample_values": [
+          0,
+          0,
+          0
+        ]
+      },
+      "signup_date": {
+        "dtype": "str",
+        "missing_count": 0,
+        "missing_pct": 0.0,
+        "unique_values": 1095,
+        "sample_values": [
+          "2021-11-26",
+          "2021-06-24",
+          "2021-07-17"
+        ]
+      },
+      "country": {
+        "dtype": "str",
+        "missing_count": 0,
+        "missing_pct": 0.0,
+        "unique_values": 7,
+        "sample_values": [
+          "IN",
+          "IN",
+          "CA"
+        ]
+      },
+      "age": {
+        "dtype": "int64",
+        "missing_count": 0,
+        "missing_pct": 0.0,
+        "unique_values": 53,
+        "sample_values": [
+          39,
+          35,
+          49
+        ]
+      },
+      "gender": {
+        "dtype": "str",
+        "missing_count": 0,
+        "missing_pct": 0.0,
+        "unique_values": 3,
+        "sample_values": [
+          "Female",
+          "Female",
+          "Female"
+        ]
+      },
+      "loyalty_tier": {
+        "dtype": "str",
+        "missing_count": 0,
+        "missing_pct": 0.0,
+        "unique_values": 4,
+        "sample_values": [
+          "Silver",
+          "Bronze",
+          "Platinum"
+        ]
+      },
+      "acquisition_channel": {
+        "dtype": "str",
+        "missing_count": 0,
+        "missing_pct": 0.0,
+        "unique_values": 5,
+        "sample_values": [
+          "Organic",
+          "Paid Search",
+          "Organic"
+        ]
+      },
+      "net_revenue": {
+        "dtype": "float64",
+        "missing_count": 0,
+        "missing_pct": 0.0,
+        "unique_values": 14474,
+        "sample_values": [
+          43.74,
+          174.78,
+          40.61
+        ]
+      },
+      "transaction_month": {
+        "dtype": "str",
+        "missing_count": 0,
+        "missing_pct": 0.0,
+        "unique_values": 36,
+        "sample_values": [
+          "2021-12",
+          "2023-06",
+          "2023-08"
+        ]
+      }
+    },
+    "data_quality": {},
+    "join_keys": [
+      "customer_id",
+      "product_id",
+      "transaction_id"
+    ],
+    "issues": []
+  },
+  "churn_metrics": {
+    "churn_count": "44429",
+    "churn_rate": 0.7531998575957415,
+    "retention_rate": 0.24680014240425852,
+    "churned_revenue_impact": 6075580.140000001,
+    "active_revenue": 2554689.17
+  },
+  "executive_insights": {
+    "loyal_behaviors": {
+      "avg_purchase_frequency": 29.443727917012662,
+      "avg_order_value": 156.11121413384595,
+      "premium_purchase_ratio": 0.7196524182887819,
+      "avg_days_since_purchase": 390.53557957194323,
+      "most_common_tier": "Bronze"
+    },
+    "churned_behaviors": {
+      "avg_purchase_frequency": 55.11018183181954,
+      "avg_order_value": 95.96549811095069,
+      "avg_days_since_purchase": 582.4500438902519,
+      "most_common_tier": "Bronze"
+    },
+    "segment_contribution": {
+      "total_revenue": {
+        "At-Risk Customers": 2003883.48,
+        "Champions": 342183.41,
+        "Lost Customers": 74955.51,
+        "Loyal Customers": 6009362.84,
+        "Potential Loyalists": 199884.07
+      },
+      "customer_id": {
+        "At-Risk Customers": 31401.0,
+        "Champions": 982.0,
+        "Lost Customers": 1079.0,
+        "Loyal Customers": 22613.0,
+        "Potential Loyalists": 2912.0
+      },
+      "avg_order_value": {
+        "At-Risk Customers": 55.76054576818148,
+        "Champions": 129.85112815197363,
+        "Lost Customers": 55.4850718257646,
+        "Loyal Customers": 157.25159375769942,
+        "Potential Loyalists": 53.372934695512825
+      }
+    },
+    "at_risk_revenue": {
+      "count": 28691,
+      "total_revenue": 3931782.13,
+      "avg_ltv": 364.8962817930514,
+      "revenue_at_stake": 1179534.639
+    },
+    "tier_retention": {
+      "Bronze": 0.23973366273989938,
+      "Gold": 0.2601376259523225,
+      "Platinum": 0.26987951807228916,
+      "Silver": 0.2518128730026311
+    },
+    "key_differentiators": {
+      "recency_days": {
+        "high_risk": 670.4022167230141,
+        "low_risk": 64.96017484215639
+      },
+      "purchase_frequency": {
+        "high_risk": 43.99051145591564,
+        "low_risk": 78.64138924318416
+      },
+      "order_value": {
+        "high_risk": 82.9143820735223,
+        "low_risk": 128.49038651448922
+      }
+    }
+  },
+  "business_impact": {
+    "high_value_customer_count": 14747,
+    "current_churn_count": 12158,
+    "customers_saveable_10pct_reduction": 1215,
+    "avg_clv_per_customer": 1369.0366763742004,
+    "annual_revenue_retained": 1663379.5617946535,
+    "all_customers_revenue": 8630269.309999999,
+    "revenue_at_risk_total": 3931782.13
+  },
+  "assumptions": []
+}
