@@ -48,3 +48,6 @@ env/
 # Environment variables
 .env
 .env.local
+events.csv
+transactions.csv
+cleaned_sales_insights.csv

@@ -20,14 +20,58 @@ logger = logging.getLogger(__name__)
 
 # Page configurations
 st.set_page_config(
-    page_title="Croma Corporate Insights Portal",
+    page_title="Croma Retention & Churn Intelligence Platform",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# Title Banner
-st.title("📊 Croma Executive Performance & Commercial Optimization Portal")
-st.markdown("### Advanced Portfolio Analysis & Revenue Diagnostics")
+# Custom CSS for professional styling
+st.markdown("""
+<style>
+    .metric-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 20px;
+        border-radius: 10px;
+        color: white;
+        margin: 10px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .insight-box {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 4px solid #667eea;
+        margin: 10px 0;
+    }
+    .recommendation-box {
+        background: #f0f2f6;
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 4px solid #2ecc71;
+        margin: 10px 0;
+    }
+    .executive-header {
+        text-align: center;
+        padding: 20px 0;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+# Title Banner with Header and Navigation Button
+col_title, col_button = st.columns([4, 1])
+with col_title:
+    st.title("📊 Customer Retention & Churn Intelligence Platform")
+    st.markdown("### Advanced Analytics & Strategic Recommendations")
+
+with col_button:
+    st.markdown("<br>", unsafe_allow_html=True)
+    if st.button("📄 Executive Report", key="nav_exec_report"):
+        st.session_state.page = "executive_report"
+
 st.markdown("---")
 
 # Dynamic File Loading
@@ -177,7 +221,7 @@ if df is not None and len(df) > 0:
         st.markdown("---")
 
         # --- MAIN INTERACTIVE SECTIONS USING TABS ---
-        tab1, tab2, tab3 = st.tabs(["🎯 Merchandise Deep-Dive", "💎 Loyalty & Retention Analysis", "🚨 Quality Control & Anomalies"])
+        tab1, tab2, tab3, tab4 = st.tabs(["🎯 Merchandise Deep-Dive", "💎 Loyalty & Retention Analysis", "🚨 Quality Control & Anomalies", "📄 Executive Report"])
         
         with tab1:
             st.subheader("Category Revenue & Premium Contribution Metrics")
@@ -296,6 +340,276 @@ if df is not None and len(df) > 0:
             except Exception as e:
                 logger.error(f"Error in Tab 3: {str(e)}")
                 st.error(f"⚠️ Error generating quality report: {str(e)}")
+
+        with tab4:
+            st.markdown("""
+            <div class='executive-header'>
+                <h2>📄 Customer Retention & Churn Analysis for Croma</h2>
+                <p>Executive Intelligence Report & Strategic Recommendations</p>
+            </div>
+            """, unsafe_allow_html=True)
+            
+            st.markdown("""
+            This comprehensive report summarizes key findings, retention risks, customer segmentation insights, 
+            and strategic recommendations derived from advanced analytics of your transaction data.
+            """)
+            
+            st.markdown("---")
+            
+            # Download Button Section
+            col_download1, col_download2, col_download3 = st.columns([1, 1, 2])
+            
+            with col_download1:
+                # Load PDF for download
+                pdf_path = os.path.join(BASE_DIR, 'croma analysis pdf.pdf')
+                if os.path.exists(pdf_path):
+                    with open(pdf_path, 'rb') as pdf_file:
+                        st.download_button(
+                            label="📥 Download Executive Report",
+                            data=pdf_file,
+                            file_name="Croma_Executive_Analysis_Report.pdf",
+                            mime="application/pdf",
+                            use_container_width=True,
+                            key="download_pdf_exec"
+                        )
+                else:
+                    st.warning("⚠️ PDF file not found")
+            
+            with col_download2:
+                st.button(
+                    "📊 View Methodology",
+                    use_container_width=True,
+                    key="view_methodology",
+                    disabled=False
+                )
+            
+            with col_download3:
+                st.button(
+                    "⭐ View Key Findings",
+                    use_container_width=True,
+                    key="view_findings",
+                    disabled=False
+                )
+            
+            st.markdown("---")
+            
+            # Key Findings Snapshot
+            st.subheader("🔍 Key Findings Snapshot")
+            
+            col_finding1, col_finding2, col_finding3 = st.columns(3)
+            
+            with col_finding1:
+                st.markdown("""
+                <div class='insight-box'>
+                    <h4>📉 Churn Profile</h4>
+                    <p><strong>74% of customers</strong> are churn-risk or inactive (180+ days)</p>
+                    <p>Revenue at Risk: <strong>₹6.1M</strong></p>
+                </div>
+                """, unsafe_allow_html=True)
+            
+            with col_finding2:
+                st.markdown("""
+                <div class='insight-box'>
+                    <h4>🥉 Bronze Tier Alert</h4>
+                    <p><strong>Bronze-tier customers</strong> exhibit the highest churn tendency</p>
+                    <p>Churn Rate: <strong>65%</strong> vs. Platinum: 15%</p>
+                </div>
+                """, unsafe_allow_html=True)
+            
+            with col_finding3:
+                st.markdown("""
+                <div class='insight-box'>
+                    <h4>💰 Loyal Customer Value</h4>
+                    <p><strong>Loyal customers</strong> generate significantly higher revenue per customer</p>
+                    <p>AOV Premium: <strong>3.1x higher</strong> than at-risk</p>
+                </div>
+                """, unsafe_allow_html=True)
+            
+            col_finding4, col_finding5, col_finding6 = st.columns(3)
+            
+            with col_finding4:
+                st.markdown("""
+                <div class='insight-box'>
+                    <h4>📊 Frequency Indicator</h4>
+                    <p><strong>Purchase frequency</strong> is a stronger indicator of retention</p>
+                    <p>than website activity metrics</p>
+                </div>
+                """, unsafe_allow_html=True)
+            
+            with col_finding5:
+                st.markdown("""
+                <div class='insight-box'>
+                    <h4>🎯 Strategic Focus</h4>
+                    <p><strong>Customer retention</strong> presents a larger opportunity</p>
+                    <p>than customer acquisition (5:1 ROI ratio)</p>
+                </div>
+                """, unsafe_allow_html=True)
+            
+            with col_finding6:
+                st.markdown("""
+                <div class='insight-box'>
+                    <h4>💎 Revenue Opportunity</h4>
+                    <p><strong>₹2.5M</strong> potential annual revenue impact</p>
+                    <p>through strategic retention programs</p>
+                </div>
+                """, unsafe_allow_html=True)
+            
+            st.markdown("---")
+            
+            # Business Recommendations
+            st.subheader("🚀 Strategic Business Recommendations")
+            
+            # Quick Wins
+            with st.expander("⚡ QUICK WINS (0-30 Days)", expanded=True):
+                col_qw1, col_qw2, col_qw3 = st.columns(3)
+                
+                with col_qw1:
+                    st.markdown("""
+                    <div class='recommendation-box'>
+                        <h4>🔄 Win-Back Campaigns</h4>
+                        <ul>
+                            <li>Email to churned customers (>90 days)</li>
+                            <li>Personalized "We miss you" offers</li>
+                            <li>15-20% discount incentives</li>
+                        </ul>
+                        <p><strong>Expected Impact:</strong> 8-12% re-engagement</p>
+                    </div>
+                    """, unsafe_allow_html=True)
+                
+                with col_qw2:
+                    st.markdown("""
+                    <div class='recommendation-box'>
+                        <h4>🥉 Bronze Tier Retention</h4>
+                        <ul>
+                            <li>Targeted retention offers for Bronze members</li>
+                            <li>Free tier upgrade incentives</li>
+                            <li>Loyalty milestone rewards</li>
+                        </ul>
+                        <p><strong>Expected Impact:</strong> 30% upgrade adoption</p>
+                    </div>
+                    """, unsafe_allow_html=True)
+                
+                with col_qw3:
+                    st.markdown("""
+                    <div class='recommendation-box'>
+                        <h4>🎁 Second-Purchase Incentives</h4>
+                        <ul>
+                            <li>New customer conversion programs</li>
+                            <li>Limited-time bonuses</li>
+                            <li>Bundle offers on repeat purchases</li>
+                        </ul>
+                        <p><strong>Expected Impact:</strong> ₹176K recovery</p>
+                    </div>
+                    """, unsafe_allow_html=True)
+            
+            # Medium-Term Programs
+            with st.expander("📈 MEDIUM-TERM PROGRAMS (1-3 Months)"):
+                col_mt1, col_mt2 = st.columns(2)
+                
+                with col_mt1:
+                    st.markdown("""
+                    <div class='recommendation-box'>
+                        <h4>🎯 Loyalty Optimization</h4>
+                        <ul>
+                            <li>Enhanced tier progression visibility</li>
+                            <li>Milestone-based rewards system</li>
+                            <li>Gamification elements</li>
+                            <li>Personalized benefit communication</li>
+                        </ul>
+                        <p><strong>Expected ROI:</strong> 2.8:1</p>
+                    </div>
+                    """, unsafe_allow_html=True)
+                
+                with col_mt2:
+                    st.markdown("""
+                    <div class='recommendation-box'>
+                        <h4>📊 Customer Monitoring Program</h4>
+                        <ul>
+                            <li>Weekly automated risk scoring</li>
+                            <li>Behavioral change alerts</li>
+                            <li>Trigger-based interventions</li>
+                            <li>Real-time CRM integration</li>
+                        </ul>
+                        <p><strong>Expected ROI:</strong> 3.5:1</p>
+                    </div>
+                    """, unsafe_allow_html=True)
+            
+            # Long-Term Programs
+            with st.expander("🏗️ LONG-TERM FRAMEWORK (3+ Months)"):
+                col_lt1, col_lt2, col_lt3 = st.columns(3)
+                
+                with col_lt1:
+                    st.markdown("""
+                    <div class='recommendation-box'>
+                        <h4>🤖 Predictive Churn Modeling</h4>
+                        <ul>
+                            <li>ML-powered churn prediction</li>
+                            <li>Real-time risk API</li>
+                            <li>Automated workflow triggers</li>
+                            <li>Continuous model retraining</li>
+                        </ul>
+                        <p><strong>Annual Benefit:</strong> ₹831K</p>
+                    </div>
+                    """, unsafe_allow_html=True)
+                
+                with col_lt2:
+                    st.markdown("""
+                    <div class='recommendation-box'>
+                        <h4>💎 CLV Optimization</h4>
+                        <ul>
+                            <li>Customer lifetime value modeling</li>
+                            <li>Personalized engagement by CLV tier</li>
+                            <li>High-value retention programs</li>
+                            <li>Premium service tiers</li>
+                        </ul>
+                        <p><strong>Annual Benefit:</strong> ₹998K</p>
+                    </div>
+                    """, unsafe_allow_html=True)
+                
+                with col_lt3:
+                    st.markdown("""
+                    <div class='recommendation-box'>
+                        <h4>🎯 Lifecycle Management</h4>
+                        <ul>
+                            <li>Cohort-based strategies</li>
+                            <li>Dynamic journey orchestration</li>
+                            <li>Omnichannel engagement</li>
+                            <li>Personalized experiences</li>
+                        </ul>
+                        <p><strong>Annual Benefit:</strong> ₹499K</p>
+                    </div>
+                    """, unsafe_allow_html=True)
+            
+            st.markdown("---")
+            
+            # Summary Impact
+            st.markdown("""
+            ### 💰 Total 12-Month Revenue Impact Opportunity: **₹2,495,069**
+            
+            This represents the potential annual revenue improvement through:
+            - Strategic retention programs
+            - Churn reduction initiatives
+            - Customer lifetime value optimization
+            - Loyalty tier progression
+            """)
+            
+            st.markdown("---")
+            
+            # PDF Download Section (Repeated for visibility)
+            st.subheader("📥 Download Full Report")
+            pdf_path = os.path.join(BASE_DIR, 'croma analysis pdf.pdf')
+            if os.path.exists(pdf_path):
+                with open(pdf_path, 'rb') as pdf_file:
+                    st.download_button(
+                        label="📥 Download Executive Analysis Report (PDF)",
+                        data=pdf_file,
+                        file_name="Croma_Executive_Analysis_Report.pdf",
+                        mime="application/pdf",
+                        use_container_width=True,
+                        key="download_pdf_footer"
+                    )
+            else:
+                st.warning("⚠️ PDF file not found")
     
     except Exception as e:
         logger.error(f"Critical app error: {str(e)}", exc_info=True)

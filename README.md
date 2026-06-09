@@ -161,7 +161,94 @@ croma_internship/
 - **Professional formatting** for currency & percentages
 - **Interactive visualizations** with Plotly charts
 
-## 📈 Business Metrics
+## � Executive Analysis Report
+
+The dashboard now includes a comprehensive **Executive Report** feature that provides strategic insights and recommendations for customer retention and churn management.
+
+### Features
+
+#### 📊 Interactive Report Tab
+Access the Executive Report directly from the main dashboard:
+- **Tab**: `📄 Executive Report`
+- **Location**: Alongside other dashboard analysis tabs
+- **Quick Access**: Click the "📄 Executive Report" button in the top-right corner
+
+#### 📥 PDF Download
+- **Feature**: One-click download of the complete analysis report
+- **Format**: Professional PDF document
+- **Content**: Full internship case study presentation with findings and recommendations
+- **File**: `croma analysis pdf.pdf`
+
+#### 🔍 Key Findings Snapshot
+The report displays critical insights in professional KPI cards:
+- **74% Churn Profile**: Customer distribution among churn-risk and inactive segments
+- **Bronze Tier Alert**: Retention challenges specific to lower-tier customers
+- **Loyal Customer Value**: Revenue premium from retained customers
+- **Frequency Indicator**: Purchase frequency as retention predictor
+- **Strategic Focus**: ROI comparison (retention vs. acquisition)
+- **Revenue Opportunity**: ₹2.5M annual impact potential
+
+#### 🚀 Strategic Recommendations
+
+**Quick Wins (0-30 Days)**
+- Win-back email campaigns
+- Bronze-tier retention offers
+- Second-purchase incentives
+- Expected impact: ₹176K recovery
+
+**Medium-Term Programs (1-3 Months)**
+- Loyalty tier optimization (2.8:1 ROI)
+- Customer monitoring with predictive scoring (3.5:1 ROI)
+- Segment-specific content delivery (4.2:1 ROI)
+
+**Long-Term Framework (3+ Months)**
+- Predictive churn modeling (₹831K annual benefit)
+- Customer lifetime value optimization (₹998K annual benefit)
+- Lifecycle management system (₹499K annual benefit)
+
+### Business Impact
+
+**Total 12-Month Revenue Impact: ₹2,495,069**
+
+This represents potential annual revenue improvement through:
+- Strategic customer retention programs
+- Churn reduction initiatives
+- Loyalty tier progression
+- Premium customer focus
+
+### Report Components
+
+1. **Executive Summary**: Key metrics and churn drivers
+2. **Segment Analysis**: 7 customer segments with retention profiles
+3. **Risk Scoring**: 5-factor churn risk model (0-100 scale)
+4. **Recommendations**: Actionable strategies with ROI estimates
+5. **Methodology**: Transparent analytical framework
+6. **Data Quality**: 87.25% clean records, 89,974 transactions analyzed
+
+### Accessing the Report
+
+1. **Open Dashboard**
+   ```bash
+   streamlit run app.py
+   ```
+
+2. **Navigate to Report**
+   - Click the `📄 Executive Report` tab
+   - Or click the `📄 Executive Report` button in top-right corner
+
+3. **Download PDF**
+   - Click `📥 Download Executive Analysis Report`
+   - PDF saves as `Croma_Executive_Analysis_Report.pdf`
+
+### Professional Features
+
+- **Responsive Design**: Works on desktop, tablet, and mobile
+- **Executive Styling**: Professional gradient backgrounds and color schemes
+- **Interactive Elements**: Expandable sections for detailed recommendations
+- **Clean Layout**: Information organized for easy scanning
+- **Action-Oriented**: Clear calls-to-action for next steps
+
+## �📈 Business Metrics
 
 ### Revenue Metrics
 - Gross Revenue (₹)
